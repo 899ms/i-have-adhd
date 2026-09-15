@@ -59,7 +59,7 @@ agy plugin uninstall i-have-adhd
 <summary><strong>AstronClaw (custom skill)</strong></summary>
 
 يدعم AstronClaw استيراد ملف Markdown كمهارة مخصصة. تستخدم هذه الطريقة
-ملف `SKILL.md` الحالي؛ راجع [دليل المهارات الرسمي ](https://github.com/iflytek/astronclaw-tutorial/blob/main/docs/guide/astronclaw/skills.md)
+ملف `SKILL.md` الحالي؛ راجع [دليل المهارات الرسمي](https://github.com/iflytek/astronclaw-tutorial/blob/main/docs/guide/astronclaw/skills.md)
 للتحكم في التحميل والإدارة.
 
 يتبع هذا الإجراء وثائق AstronClaw، لكنه لم يُختبر مع
@@ -69,10 +69,10 @@ agy plugin uninstall i-have-adhd
 
 1. قم بتنزيل [SKILL.md](https://raw.githubusercontent.com/ayghri/i-have-adhd/main/skills/i-have-adhd/SKILL.md) الأساسي واحفظه باسم `SKILL.md`. قم بمراجعة محتوياته قبل التحميل.
 2. في AstronClaw، افتح **我的技能 (مهاراتي)**، واختر **新建 (جديد)**، وقم بتحميل ملف `.md`.
-3. تأكد من تسمية المهارة المستوردة `i-have-adhd`. استخدم **启用/禁用 (تمكين/تعطيل)** للتحكم في مدى توفره.
+3. تأكد من تسمية المهارة المستوردة `i-have-adhd`. استخدم **启用/禁用 (تمكين/تعطيل)** للتحكم في مدى توفرها.
 
 لا يلزم سوى ملف المهارة بصيغة Markdown. يؤدي التحميل إلى إرسال هذا الملف إلى AstronClaw؛
-لا تعد بيانات البرنامج الإضافي للمستودع وخطافاته جزءًا من هذا الإعداد.
+لا تُعدّ ملفات بيان المكوّن الإضافي وخطافاته في المستودع جزءًا من هذا الإعداد.
 
 ### التحقق والتنشيط
 
@@ -94,7 +94,7 @@ Use the i-have-adhd skill for this conversation. Explain how to create an empty 
 للاعتماد على أمر يبدأ بشرطة مائلة `/i-have-adhd`.
 
 تطلب المهارة من المساعد الحفاظ على أسلوب المحادثة حتى
-أنت تقول `stop adhd mode` أو `normal mode`. لا تغيّر هذه التعليمات حالة التفعيل في المنصة؛ عطّل المهارة وابدأ
+تقول `stop adhd mode` أو `normal mode`. لا تغيّر هذه التعليمات حالة التفعيل في المنصة؛ عطّل المهارة وابدأ
 محادثة جديدة لبدء جلسة من دونها.
 
 ### تحديث
@@ -164,7 +164,7 @@ touch "$CLAUDE_CONFIG_DIR/.i-have-adhd-always"
 rm ~/.claude/.i-have-adhd-always
 ```
 
-يتم تشغيل الخطاف فقط عند وجود ملف العلامة، لذا فإن تثبيت المكون الإضافي لا يغير شيئًا من تلقاء نفسه. لا يزال "إيقاف وضع adhd" يقوم بإيقاف تشغيله للجلسة الحالية.
+يتم تشغيل الخطاف فقط عند وجود ملف العلامة، لذا فإن تثبيت المكوّن الإضافي لا يغير شيئًا من تلقاء نفسه. لا يزال "إيقاف وضع adhd" يقوم بإيقاف تشغيله للجلسة الحالية.
 
 </details>
 
@@ -292,9 +292,9 @@ grok plugin uninstall i-have-adhd --confirm
 <details>
 <summary><strong>Gemini CLI</strong></summary>
 
-لا يوجد لدى Gemini CLI سوق للمكونات الإضافية، لذلك هناك طريقان أصليان: **أمر مخصص** (اختياري، ويبقى معطلاً حتى تستدعيه) أو **ملحق** (يتم تشغيله دائمًا بمجرد تثبيته). يتطابق مسار الأمر مع الوضع الافتراضي لهذه المهارة؛ اختره إلا إذا كنت تريد القواعد في كل جلسة.
+لا يوجد لدى Gemini CLI سوق للمكونات الإضافية، لذلك هناك طريقان أصليان: **أمر مخصص** (اختياري، ويبقى معطلاً حتى تستدعيه) أو **امتداد** (يعمل دائمًا بمجرد تثبيته). يتطابق مسار الأمر مع الوضع الافتراضي لهذه المهارة؛ اختره إلا إذا كنت تريد القواعد في كل جلسة.
 
-### التثبيت (الأمر، الاشتراك)
+### التثبيت (الأمر، تفعيل اختياري)
 
 ```bash
 mkdir -p ~/.gemini/commands
@@ -304,13 +304,13 @@ curl -fsSL https://raw.githubusercontent.com/ayghri/i-have-adhd/main/skills/i-ha
 
 ابدأ جلسة جديدة، اكتب `/i-have-adhd`. يبقى في تلك الجلسة.
 
-### التثبيت (ملحق، قيد التشغيل دائمًا)
+### التثبيت (امتداد، تشغيل دائم)
 
 ```bash
 gemini extensions install https://github.com/ayghri/i-have-adhd
 ```
 
-يقوم الملحق بتحميل `GEMINI.md`، الذي يستورد المهارة الكاملة، وبالتالي يتم تطبيق القواعد من الرسالة الأولى. يجب تثبيت `git`.
+يحمّل الامتداد ملف `GEMINI.md`، الذي يستورد المهارة الكاملة، وبالتالي يتم تطبيق القواعد من الرسالة الأولى. يجب تثبيت `git`.
 
 ### تحقق
 
@@ -332,7 +332,7 @@ gemini extensions update i-have-adhd    # طريقة الامتداد
 
 ```bash
 gemini extensions uninstall i-have-adhd    # طريقة الامتداد
-rm ~/.gemini/commands/i-have-adhd.toml     # command route
+rm ~/.gemini/commands/i-have-adhd.toml     # طريقة الأمر
 ```
 
 </details>
@@ -340,7 +340,7 @@ rm ~/.gemini/commands/i-have-adhd.toml     # command route
 <details>
 <summary><strong>GitHub Copilot (VS Code and Copilot CLI)</strong></summary>
 
-يقرأ Copilot مهارات الوكيل محليًا: نفس `SKILL.md`، بدون تحويل. فهو يقوم بمسح `.github/skills/`، و`.claude/skills/`، و`.agents/skills/` في المشروع، و`~/.copilot/skills/`، و`~/.claude/skills/`، و`~/.agents/skills/` عالميًا.
+يقرأ Copilot مهارات الوكيل أصلاً: نفس `SKILL.md`، بدون تحويل. فهو يقوم بمسح `.github/skills/`، و`.claude/skills/`، و`.agents/skills/` في المشروع، و`~/.copilot/skills/`، و`~/.claude/skills/`، و`~/.agents/skills/` عالميًا.
 
 ### تثبيت
 
@@ -423,7 +423,7 @@ hermes skills install ayghri/i-have-adhd/skills/i-have-adhd
 
 اكتب `/i-have-adhd`. يتم تثبيت المهارة في `~/.hermes/skills/` ويتم عرضها كأمر يبدأ بشرطة مائلة في بداية الجلسة التالية.
 
-هل تفضل التصفح أولا؟ أضف هذا المستودع كمصدر للمهارات (tap)، ثم ابحث وقم بتثبيت:
+هل تفضل التصفح أولا؟ أضف هذا المستودع كمصدر للمهارات (tap)، ثم ابحث وثبّت:
 
 ```bash
 hermes skills tap add ayghri/i-have-adhd
@@ -449,7 +449,7 @@ hermes skills update i-have-adhd
 hermes skills uninstall i-have-adhd
 ```
 
-أو ولإزالة مصدر المهارات أيضًا: `hermes skills tap remove ayghri/i-have-adhd`.
+ولإزالة مصدر المهارات أيضًا: `hermes skills tap remove ayghri/i-have-adhd`.
 
 ### تشغيل دائمًا (اختياري)
 
@@ -504,7 +504,7 @@ hermes skills uninstall i-have-adhd
 <details>
 <summary><strong>OpenCode</strong></summary>
 
-يقوم OpenCode بتحميل هذا المستودع كمكون إضافي للخادم: يسجل `.opencode/plugins/i-have-adhd.mjs` نقطة إدخال `skills/` والأمر `/i-have-adhd`، ويضيف مجموعة القواعد عند تمكين التشغيل الدائم. يقرأ OpenCode أيضًا `skills/` محليًا، لذلك تظل المهارة تعمل حتى بدون المكون الإضافي - يضيف المكون الإضافي أمر `/i-have-adhd` وعلامة التشغيل الدائم.
+يقوم OpenCode بتحميل هذا المستودع كمكون إضافي للخادم: يسجل `.opencode/plugins/i-have-adhd.mjs` نقطة إدخال `skills/` والأمر `/i-have-adhd`، ويضيف مجموعة القواعد عند تمكين التشغيل الدائم. يقرأ OpenCode أيضًا `skills/` محليًا، لذلك تظل المهارة تعمل حتى بدون المكوّن الإضافي - يضيف المكوّن الإضافي أمر `/i-have-adhd` وعلامة التشغيل الدائم.
 
 ### تثبيت
 
@@ -550,7 +550,7 @@ git -C ~/.config/opencode/vendor/i-have-adhd pull
 touch ~/.config/opencode/.i-have-adhd-always
 ```
 
-أثناء وجود العلامة، يضيف المكوّن الإضافي مجموعة القواعد الكاملة إلى موجّه النظام في كل رد - وهو ما يعادل OpenCode لخطاف Claude Code `SessionStart`. يقوم `stop adhd mode` أو `normal mode` بتعطيله للجلسة الحالية؛ احذف العلامة لتعطيل التشغيل الدائم:
+أثناء وجود العلامة، يضيف المكوّن الإضافي مجموعة القواعد الكاملة إلى موجّه النظام في كل رد - وهو نظير خطاف `SessionStart` الخاص بـ Claude Code في OpenCode. يقوم `stop adhd mode` أو `normal mode` بتعطيله للجلسة الحالية؛ احذف العلامة لتعطيل التشغيل الدائم:
 
 ```bash
 rm ~/.config/opencode/.i-have-adhd-always
@@ -562,7 +562,7 @@ rm ~/.config/opencode/.i-have-adhd-always
 <details>
 <summary><strong>Pi</strong></summary>
 
-يكتشف Pi هذا المستودع كحزمة أصلية: يوفر `extensions/` الوضع المستمر للجلسة ويحتفظ `skills/` بنقطة إدخال مهارات الوكيل متاحة.
+يكتشف Pi هذا المستودع كحزمة أصلية: يوفر `extensions/` الوضع المستمر للجلسة ويُبقي `skills/` نقطة دخول مهارات الوكيل متاحة.
 
 ### تثبيت
 
@@ -570,7 +570,7 @@ rm ~/.config/opencode/.i-have-adhd-always
 pi install https://github.com/ayghri/i-have-adhd
 ```
 
-ابدأ جلسة Pi جديدة. تبديل الإخراج المناسب لـ ADHD للجلسة الحالية:
+ابدأ جلسة Pi جديدة. بدّل الإخراج المناسب لـ ADHD للجلسة الحالية:
 
 ```text
 /i-have-adhd
@@ -628,7 +628,7 @@ pi remove https://github.com/ayghri/i-have-adhd
 touch ~/.pi/agent/.i-have-adhd-always
 ```
 
-يتحقق الامتداد من العلامة في كل جلسة جديدة أو مستأنفة أو متشعبة أو مُعاد تحميلها. يفوز الاختيار المحفوظ للجلسة الحالية على هذا الإعداد الافتراضي، لذا فإن `stop adhd mode` يبقي تلك الجلسة معطلة.
+يتحقق الامتداد من العلامة في كل جلسة جديدة أو مستأنفة أو متشعبة أو مُعاد تحميلها. تكون الأولوية للاختيار المحفوظ للجلسة الحالية على هذا الإعداد الافتراضي، لذا فإن `stop adhd mode` يبقي تلك الجلسة معطلة.
 
 للعودة إلى التفعيل عند الطلب:
 
@@ -650,7 +650,7 @@ rm ~/.pi/agent/.i-have-adhd-always
 - `alwaysOn`: ابدأ كل جلسة مع القواعد النشطة - مثل ملف العلامة `.i-have-adhd-always`، الذي لا يزال يعمل
 - `hideStatus`: احتفظ بإدخال شريط الحالة `● ADHD ON` مخفيًا؛ لا تزال القواعد والأمر `/i-have-adhd` تعمل
 
-اقرأ مرة واحدة عند بدء تشغيل الامتداد، لذا أعد تشغيل Pi بعد تغييره. يفوز الاختيار المحفوظ للجلسة الحالية على `alwaysOn`، لذا فإن `stop adhd mode` يبقي تلك الجلسة معطلة.
+يُقرأ الملف مرة واحدة عند بدء تشغيل الامتداد، لذا أعد تشغيل Pi بعد تغييره. تكون الأولوية للاختيار المحفوظ للجلسة الحالية على `alwaysOn`، لذا فإن `stop adhd mode` يبقي تلك الجلسة معطلة.
 
 إذا تم تعيين `PI_CODING_AGENT_DIR`، فضع `.i-have-adhd-always` في هذا الدليل بدلاً من ذلك. قم بتشغيل `/reload` أو ابدأ جلسة جديدة بعد تغيير العلامة.
 
@@ -695,8 +695,7 @@ omp plugin marketplace remove i-have-adhd
 qwen extensions install ayghri/i-have-adhd
 ```
 
-يدعم Qwen Code اختصار GitHub ويقوم بتثبيت المستودع كملف
-امتداد أصلي. يكتشف الامتداد المهارة تحت `skills/`.
+يدعم Qwen Code اختصار GitHub ويثبّت المستودع كامتداد أصلي. يكتشف الامتداد المهارة تحت `skills/`.
 
 اكتب `/i-have-adhd` لاستدعاء المهارة بشكل صريح. تثبيت الامتداد
 لا يغير الإخراج حتى يتم استدعاء المهارة.
@@ -732,7 +731,7 @@ qwen extensions uninstall i-have-adhd
 <details>
 <summary><strong>Zed</strong></summary>
 
-يقرأ وكيل Zed مهارات الوكيل أصلاً باستخدام نفس تنسيق SKILL.md دون تحويل. لاحظ أنه تم استبدال "قواعد" Zed الأقدم بالمهارات جنبًا إلى جنب مع تعليمات AGENTS.md.
+يقرأ وكيل Zed مهارات الوكيل أصلاً باستخدام نفس تنسيق SKILL.md دون تحويل. لاحظ أنه تم استبدال قواعد Zed القديمة بالمهارات جنبًا إلى جنب مع تعليمات AGENTS.md.
 
 ### تثبيت
 
@@ -744,7 +743,7 @@ https://github.com/ayghri/i-have-adhd/blob/main/skills/i-have-adhd/SKILL.md
 
 احفظها في نطاق **المستخدم** لجميع المشاريع، أو في نطاق **المشروع** لمشروع واحد. ثم اكتب `/i-have-adhd` في لوحة الوكيل.
 
-تفضل نظام الملفات؟ استنسخ المستودع وأسقط مجلد المهارات في دليل مهارات المستخدم الخاص بك:
+تفضل نظام الملفات؟ استنسخ المستودع وضَع مجلد المهارات في دليل مهارات المستخدم الخاص بك:
 
 ```bash
 git clone https://github.com/ayghri/i-have-adhd
@@ -754,7 +753,7 @@ cp -R i-have-adhd/skills/i-have-adhd ~/.agents/skills/
 
 ### تحقق
 
-افتح مدير المهارات في لوحة الوكلاء وتأكد من إدراج `i-have-adhd`. أو اكتب `/` وأكد ظهوره.
+افتح مدير المهارات في لوحة الوكيل وتأكد من إدراج `i-have-adhd`. أو اكتب `/` وأكد ظهوره.
 
 ### تحديث
 
@@ -766,7 +765,7 @@ cp -R i-have-adhd/skills/i-have-adhd ~/.agents/skills/
 
 ### تشغيل دائمًا (اختياري)
 
-أضف إلى `~/.config/zed/AGENTS.md` الشخصية الخاصة بك:
+أضف إلى ملفك الشخصي `~/.config/zed/AGENTS.md`:
 
 ```markdown
 ## أسلوب الإجابة
@@ -805,7 +804,7 @@ npx skills add ayghri/i-have-adhd -a opencode -y
 
 في محادثة جديدة مع الوكيل، اكتب `/i-have-adhd`.
 
-بدون واجهة سطر الأوامر (CLI)، انسخ مجلد المهارات إلى أي مسار يقوم وكيلك بمسحه ضوئيًا:
+بدون واجهة سطر الأوامر (CLI)، انسخ مجلد المهارات إلى أي مسار يفحصه وكيلك:
 
 ```bash
 git clone https://github.com/ayghri/i-have-adhd
@@ -861,7 +860,7 @@ npx skills remove i-have-adhd -g    # إذا ثُبّتت عالميًا
 
 ## كيف يعمل التنشيط
 
-1. **تم التثبيت، ولم يتم استدعاؤه.** في Claude Code، وQwen Code، وCodex، وGrok، لا يحدث شيء حتى تقوم باستدعاء المهارة بشكل صريح. يحترم Claude Code وQwen Code وGrok `disable-model-invocation: true` في `SKILL.md`؛ ويحترم Codex `policy.allow_implicit_invocation: false` في `agents/openai.yaml`. قد تقوم الأدوات الأخرى بتحميل وصف كل مهارة عند بدء التشغيل وتنشيط المهارة نفسها.
+1. **تم التثبيت، ولم يتم استدعاؤه.** في Claude Code، وQwen Code، وCodex، وGrok، لا يحدث شيء حتى تقوم باستدعاء المهارة بشكل صريح. يحترم Claude Code وQwen Code وGrok `disable-model-invocation: true` في `SKILL.md`؛ ويحترم Codex `policy.allow_implicit_invocation: false` في `agents/openai.yaml`. قد تقوم الأدوات الأخرى بتحميل وصف كل مهارة عند بدء التشغيل، وقد تنشّط المهارة من تلقاء نفسها.
 2. **أنت تستدعيه بشكل صريح.** اكتب `/i-have-adhd` في Claude Code أو Qwen Code أو Grok، أو `$i-have-adhd` في Codex. تبقى القواعد سارية لتلك الجلسة. يؤدي `stop adhd mode` أو `normal mode` إلى تعطيل الوضع.
 3. **أنشئ `~/.claude/.i-have-adhd-always`** (في Claude Code). يقوم الخطاف `SessionStart` بتحميل مجموعة القواعد الكاملة من الرسالة الأولى، في كل جلسة.
 4. **أضف مقتطف التشغيل الدائم أعلاه** (Grok، وCodex، وأدوات أخرى). يقرأ Grok كلاً من `~/.grok/AGENTS.md` و`~/.grok/rules/*.md`. يحافظ هذا على القواعد الأساسية ضمن السياق المستمر لوكيلك.
@@ -870,11 +869,11 @@ npx skills remove i-have-adhd -g    # إذا ثُبّتت عالميًا
 
 ## استكشاف الأخطاء وإصلاحها
 
-**`/i-have-adhd` ليس في وضع الإكمال التلقائي.** أعد تشغيل الوكيل. تتم قراءة فهرس البرنامج المساعد عند بدء التشغيل. في Grok، شغّل أيضًا `grok plugin enable i-have-adhd` وتأكد من أن التثبيت استخدم `--trust`.
+**`/i-have-adhd` ليس في وضع الإكمال التلقائي.** أعد تشغيل الوكيل. تتم قراءة فهرس المكوّن الإضافي عند بدء التشغيل. في Grok، شغّل أيضًا `grok plugin enable i-have-adhd` وتأكد من أن التثبيت استخدم `--trust`.
 
-**علامة التشغيل دائمًا ليس لها أي تأثير.** قم بتحديث البرنامج المساعد (`claude plugin marketplace update i-have-adhd`) وأعد التشغيل. تتم قراءة الخطافات عند بدء التشغيل، ويتطلب ملف العلامة إصدارًا من المكوّن الإضافي يتضمن `hooks/hooks.json`. لا يقرأ Grok ملف `~/.claude/.i-have-adhd-always`؛ ضع كتلة التشغيل الدائم بدلاً من ذلك في `~/.grok/AGENTS.md` أو `~/.grok/rules/i-have-adhd.md`.
+**علامة التشغيل الدائم ليس لها أي تأثير.** قم بتحديث المكوّن الإضافي (`claude plugin marketplace update i-have-adhd`) وأعد التشغيل. تتم قراءة الخطافات عند بدء التشغيل، ويتطلب ملف العلامة إصدارًا من المكوّن الإضافي يتضمن `hooks/hooks.json`. لا يقرأ Grok ملف `~/.claude/.i-have-adhd-always`؛ ضع كتلة التشغيل الدائم بدلاً من ذلك في `~/.grok/AGENTS.md` أو `~/.grok/rules/i-have-adhd.md`.
 
-**فشل `claude plugin marketplace add`.** استخدم نموذج `owner/repo`. يجب أن يشير المسار المحلي إلى جذر الريبو، وليس إلى `.claude-plugin/`.
+**فشل `claude plugin marketplace add`.** استخدم نموذج `owner/repo`. يجب أن يشير المسار المحلي إلى جذر المستودع، وليس إلى `.claude-plugin/`.
 
 **`grok plugin install` لا يُحدث أي أثر ظاهر.** أضف `--trust`، ثم شغّل `grok plugin enable i-have-adhd`، ثم ابدأ جلسة جديدة. تبقى مكوّنات Grok الإضافية معطّلة وغير موثوقة حتى تتم هاتان الخطوتان.
 
@@ -891,4 +890,4 @@ claude plugin install i-have-adhd@i-have-adhd
 
 أعد التشغيل، ثم أعد استدعاء `/i-have-adhd`.
 
-**المهارة مفقودة بعد `npx skills add`.** ابدأ محادثة وكيل جديد. تتم فهرسة المهارات عند بداية الجلسة. تأكد من وجود المجلد في المسار الذي يفحصه وكيلك (`~/.cursor/skills/` لـ Cursor، `.agents/skills/` لـ OpenCode) وأن بيانات الواجهة الأمامية `name` تتطابق مع اسم المجلد.
+**المهارة مفقودة بعد `npx skills add`.** ابدأ محادثة جديدة مع الوكيل. تتم فهرسة المهارات عند بداية الجلسة. تأكد من وجود المجلد في المسار الذي يفحصه وكيلك (`~/.cursor/skills/` لـ Cursor، `.agents/skills/` لـ OpenCode) وأن الحقل `name` في ترويسة الملف (frontmatter) يتطابق مع اسم المجلد.
